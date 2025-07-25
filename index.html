@@ -10,11 +10,11 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background: linear-gradient(135deg, #1E293B 0%, #2D3748 100%);
+            background: linear-gradient(135deg, #334155 0%, #64748B 100%);
             color: #E5E7EB;
         }
         .hero-bg {
-            background-image: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(45, 55, 72, 0.9)), url('https://images.unsplash.com/photo-1516321310764-4d2c3e13f425?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(135deg, rgba(51, 65, 85, 0.7), rgba(100, 116, 139, 0.7)), url('https://images.unsplash.com/photo-1516321310764-4d2c3e13f425?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: #F9FAFB;
@@ -69,10 +69,10 @@
         p {
             font-size: 1rem;
             line-height: 1.6;
-            color: #D1D5DB;
+            color: #9CA3AF;
         }
         .bg-section {
-            background: rgba(30, 41, 59, 0.9);
+            background: rgba(51, 65, 85, 0.6);
             border-radius: 0.5rem;
             padding: 1.5rem;
         }
@@ -101,9 +101,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-300">
+<body class="bg-gray-200 text-gray-700">
     <!-- Header -->
-    <header class="bg-gray-800 shadow sticky top-0 z-10">
+    <header class="bg-gray-100 shadow sticky top-0 z-10">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="logo-container">
                 <img src="assets/intellirize-labs-logo.png" alt="IntelliRize Labs Logo" class="h-10 md:h-12">
@@ -112,23 +112,23 @@
                 </div>
             </div>
             <div class="md:flex space-x-6 hidden md:block">
-                <a href="#home" class="text-gray-300 hover:text-teal-400 nav-item">Home</a>
-                <a href="#staffing" class="text-gray-300 hover:text-teal-400 nav-item">Staffing</a>
-                <a href="#resourcing" class="text-gray-300 hover:text-teal-400 nav-item">Resourcing</a>
-                <a href="#expertise" class="text-gray-300 hover:text-teal-400 nav-item">Our Expertise</a>
-                <a href="#contact" class="text-gray-300 hover:text-teal-400 nav-item">Contact</a>
+                <a href="#home" class="text-gray-700 hover:text-teal-600 nav-item">Home</a>
+                <a href="#staffing" class="text-gray-700 hover:text-teal-600 nav-item">Staffing</a>
+                <a href="#resourcing" class="text-gray-700 hover:text-teal-600 nav-item">Resourcing</a>
+                <a href="#expertise" class="text-gray-700 hover:text-teal-600 nav-item">Our Expertise</a>
+                <a href="#contact" class="text-gray-700 hover:text-teal-600 nav-item">Contact</a>
             </div>
-            <button id="menu-toggle" class="md:hidden text-gray-300 focus:outline-none">
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
-            <div id="nav-menu" class="md:hidden hidden absolute top-12 right-4 bg-gray-800 shadow-lg rounded-lg p-3 space-y-2">
-                <a href="#home" class="block text-gray-300 hover:text-teal-400 nav-item">Home</a>
-                <a href="#staffing" class="block text-gray-300 hover:text-teal-400 nav-item">Staffing</a>
-                <a href="#resourcing" class="block text-gray-300 hover:text-teal-400 nav-item">Resourcing</a>
-                <a href="#expertise" class="block text-gray-300 hover:text-teal-400 nav-item">Our Expertise</a>
-                <a href="#contact" class="block text-gray-300 hover:text-teal-400 nav-item">Contact</a>
+            <div id="nav-menu" class="md:hidden hidden absolute top-12 right-4 bg-gray-100 shadow-lg rounded-lg p-3 space-y-2">
+                <a href="#home" class="block text-gray-700 hover:text-teal-600 nav-item">Home</a>
+                <a href="#staffing" class="block text-gray-700 hover:text-teal-600 nav-item">Staffing</a>
+                <a href="#resourcing" class="block text-gray-700 hover:text-teal-600 nav-item">Resourcing</a>
+                <a href="#expertise" class="block text-gray-700 hover:text-teal-600 nav-item">Our Expertise</a>
+                <a href="#contact" class="block text-gray-700 hover:text-teal-600 nav-item">Contact</a>
             </div>
         </nav>
     </header>
@@ -160,7 +160,7 @@
     </section>
 
     <!-- Resourcing Section -->
-    <section id="resourcing" class="py-8 bg-gray-800">
+    <section id="resourcing" class="py-8">
         <div class="container mx-auto px-4">
             <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Strategic Resourcing Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -198,7 +198,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-8 bg-gray-800">
+    <section id="contact" class="py-8">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-xl md:text-2xl font-bold mb-4">Get in Touch</h2>
             <p class="text-base mb-4">Ready to enhance your team with our staffing and resourcing solutions? Contact us today!</p>
@@ -209,7 +209,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-4">
+    <footer class="bg-gray-100 py-4">
         <div class="container mx-auto px-4 text-center">
             <p>© 2025 IntelliRize Labs. All rights reserved.</p>
         </div>
