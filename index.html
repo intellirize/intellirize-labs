@@ -19,24 +19,18 @@
             background-color: rgba(30, 58, 138, 0.7);
             color: white;
         }
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 2rem;
-            background: linear-gradient(90deg, #00D4FF, #6A0DAD);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-flex;
-            align-items: center;
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: transform 0.3s;
         }
-        .logo span.main {
-            font-size: 1.5em;
+        .logo img:hover {
+            transform: scale(1.05);
         }
-        .logo span.sub {
-            font-style: italic;
-            font-size: 1.2em;
-            margin-left: 0.2em;
+        @media (min-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
         }
         #back-to-top {
             position: fixed;
@@ -61,7 +55,7 @@
     <header class="bg-white shadow sticky top-0 z-10">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="logo">
-                <span class="main">IntelliRize</span><span class="sub">Labs</span>
+                <img src="assets/intellirize-labs-logo.png" alt="IntelliRize Labs Logo" class="h-10 md:h-12">
             </div>
             <div class="md:flex space-x-6 hidden md:block">
                 <a href="#home" class="text-gray-600 hover:text-blue-600 nav-item">Home</a>
