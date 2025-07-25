@@ -5,45 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliRize Labs - Software Services & Staffing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
         .hero-bg {
-            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            background-image: url('https://images.unsplash.com/photo-1516321310764-4d2c3e13f425?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(30, 58, 138, 0.7);
+            color: white;
+        }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            background: linear-gradient(90deg, #00D4FF, #6A0DAD);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-flex;
+            align-items: center;
+        }
+        .logo span.main {
+            font-size: 1.5em;
+        }
+        .logo span.sub {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-left: 0.2em;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #00D4FF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        #back-to-top:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
-    <header class="bg-white shadow">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-900">IntelliRize Labs</div>
-            <div class="space-x-6">
-                <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-600">Services</a>
-                <a href="#staffing" class="text-gray-600 hover:text-blue-600">Staffing</a>
-                <a href="#background" class="text-gray-600 hover:text-blue-600">Our Expertise</a>
-                <a href="#why-us" class="text-gray-600 hover:text-blue-600">Why Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+    <header class="bg-white shadow sticky top-0 z-10">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo">
+                <span class="main">IntelliRize</span><span class="sub">Labs</span>
+            </div>
+            <div class="md:flex space-x-6 hidden md:block">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 nav-item">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 nav-item">Services</a>
+                <a href="#staffing" class="text-gray-600 hover:text-blue-600 nav-item">Staffing</a>
+                <a href="#background" class="text-gray-600 hover:text-blue-600 nav-item">Our Expertise</a>
+                <a href="#why-us" class="text-gray-600 hover:text-blue-600 nav-item">Why Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 nav-item">Contact</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div id="nav-menu" class="md:hidden hidden absolute top-16 right-4 bg-white shadow-lg rounded-lg p-4 space-y-2">
+                <a href="#home" class="block text-gray-600 hover:text-blue-600 nav-item">Home</a>
+                <a href="#services" class="block text-gray-600 hover:text-blue-600 nav-item">Services</a>
+                <a href="#staffing" class="block text-gray-600 hover:text-blue-600 nav-item">Staffing</a>
+                <a href="#background" class="block text-gray-600 hover:text-blue-600 nav-item">Our Expertise</a>
+                <a href="#why-us" class="block text-gray-600 hover:text-blue-600 nav-item">Why Us</a>
+                <a href="#contact" class="block text-gray-600 hover:text-blue-600 nav-item">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Image -->
     <section id="home" class="hero-bg text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Innovation with Elite Software Services & Strategic Staffing</h1>
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Empowering Innovation with Elite Software Services & Strategic Staffing</h1>
             <p class="text-lg md:text-xl mb-6">IntelliRize Labs delivers custom software solutions and flexible IT staffing to drive your digital transformation.</p>
-            <a href="#contact" class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100">Get Started</a>
+            <a href="#contact" class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">Get Started</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Software & Technology Services</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Software & Technology Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="p-6 bg-gray-50 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Custom Software Development</h3>
                     <p>We deliver tailored solutions—from web and mobile apps to enterprise-scale platforms—leveraging industry best practices and secure coding standards.</p>
@@ -58,9 +115,9 @@
 
     <!-- Staffing Section -->
     <section id="staffing" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Staff Augmentation & Talent Solutions</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Staff Augmentation & Talent Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="p-6 bg-white rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Flexible IT Staffing</h3>
                     <p>Need developers, UI/UX designers, or project managers? We deliver skilled professionals who seamlessly integrate into your team.</p>
@@ -75,9 +132,9 @@
 
     <!-- Background Section -->
     <section id="background" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Expertise</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Our Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 bg-gray-50 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Advanced Technology</h3>
                     <p>We harness cutting-edge technologies like microservices, serverless architectures, and containerization (Docker, Kubernetes) to build scalable, high-performance systems tailored to your needs.</p>
@@ -96,9 +153,9 @@
 
     <!-- Why Us Section -->
     <section id="why-us" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Why Partner with IntelliRize Labs?</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Why Partner with IntelliRize Labs?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-semibold mb-4">One-Stop Digital Partner</h3>
                     <p>We unify software, infrastructure, and human capital into a cohesive offering for seamless digital transformation.</p>
@@ -117,31 +174,58 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Get in Touch</h2>
             <p class="text-lg mb-8">Ready to transform your business with our software and staffing solutions? Contact us today!</p>
             <div class="flex justify-center">
-                <a href="mailto:contact@intellizelabs.com" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Contact Us</a>
+                <a href="mailto:contact@intellizelabs.com" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Contact Us</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-blue-900 text-white py-6">
-        <div class="container mx-auto px-6 text-center">
+        <div class="container mx-auto px-4 text-center">
             <p>© 2025 IntelliRize Labs. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top">↑</button>
+
     <script>
-        // Smooth scrolling for navigation links
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling and Active Nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelectorAll('.nav-item').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                if (window.innerWidth < 768) document.getElementById('nav-menu').classList.add('hidden');
             });
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            document.getElementById('back-to-top').style.display = (window.scrollY > 100) ? 'block' : 'none';
+        });
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active Nav on Load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                document.querySelectorAll('.nav-item').forEach(a => {
+                    if (a.getAttribute('href') === hash) a.classList.add('active');
+                });
+            }
         });
     </script>
 </body>
