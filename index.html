@@ -88,6 +88,24 @@
         .bg-section:hover {
             transform: translateY(-2px);
         }
+        .job-card {
+            border: 2px solid #A855F7;
+            position: relative;
+            overflow: hidden;
+        }
+        .job-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #FF3B30;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transform: rotate(15deg);
+            box-shadow: 0 2px 8px rgba(255,59,48,0.4);
+        }
         #back-to-top {
             position: fixed;
             bottom: 20px;
@@ -170,7 +188,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Focus on Staffing -->
+    <!-- Hero Section -->
     <section id="home" class="hero-bg py-12">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-2xl md:text-4xl font-bold mb-3">Leading Resourcing & Staffing Solutions</h1>
@@ -213,7 +231,7 @@
         </div>
     </section>
 
-    <!-- Expertise Section with Future Hint -->
+    <!-- Expertise Section -->
     <section id="expertise" class="py-8">
         <div class="container mx-auto px-4">
             <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Our Expertise</h2>
@@ -234,18 +252,63 @@
         </div>
     </section>
 
-    <!-- Careers Section -->
-    <section id="careers" class="py-8">
+    <!-- Careers Section – YOUR UPDATED VERSION -->
+    <!-- Careers Section – TECH-FOCUSED UPDATE -->
+    <section id="careers" class="py-8 bg-gradient-to-b from-purple-50 to-teal-50">
         <div class="container mx-auto px-4">
             <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Join Our Team</h2>
-            <div class="bg-section">
-                <p class="mb-4">At IntelliRize Labs, we're building a dynamic team passionate about IT staffing and innovation. Explore opportunities in business development, recruitment, and emerging tech roles.</p>
-                <p class="mb-4">We offer competitive salaries, remote flexibility, professional growth, and a collaborative environment. Hot job: <a href="https://www.naukri.com/job-listings-040925033746" class="underline hover:text-indigo-700" target="_blank">Business Development Manager</a> – Apply now!</p>
-                <div class="flex justify-center space-x-4 mb-4">
+            <div class="bg-section max-w-4xl mx-auto">
+                <p class="mb-6 text-center">
+                    We’re hiring a Senior Solution Architect to design next-gen cloud platforms for Fortune-500 clients.
+                </p>
+                <!-- SENIOR SOLUTION ARCHITECT – TECH ONLY -->
+                <div class="job-card bg-white p-6 rounded-xl shadow-lg mb-6 relative overflow-hidden">
+                    <div class="job-badge">NOW HIRING</div>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">
+                        Senior Solution Architect
+                    </h3>
+                    <p class="text-gray-600 mb-5">
+                        <strong>Location:</strong> North America (100% Remote)
+                    </p>
+                    <div class="space-y-5 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Must-Have Technical Skills</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> 10+ years building cloud-native architectures (AWS, Azure, GCP)</li>
+                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Hands-on with microservices, Kubernetes, Terraform, CI/CD</li>
+                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Designed 3+ enterprise migrations (>500 workloads)</li>
+                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Deep expertise in cost optimization & security hardening</li>
+                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Pre-sales white-boarding & RFP response leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+                        <a href="mailto:resumes@intellirize.com?subject=Senior%20Solution%20Architect%20Application&body=Hi%20Team%2C%0A%0AI’m%20applying%20for%20the%20Senior%20Solution%20Architect%20role.%20Resume%20attached.%0A%0AThanks!"
+                           class="bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition text-center">
+                           Apply via Email
+                        </a>
+                        <a href="https://wa.me/14844849815?text=Hi!%20I’m%20a%20Senior%20Solution%20Architect%20ready%20to%20design%20your%20next%20cloud%20platform.%20Let’s%20talk!"
+                           target="_blank"
+                           class="bg-green-600 text-white px-6 py-3 rounded-full font-bold hover:bg-green-700 transition text-center flex items-center justify-center">
+                           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.446.099-.148.05-.272-.025-.372-.074-.099-.67-1.613-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.265c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+                           WhatsApp Me
+                        </a>
+                    </div>
+                    <p class="text-center text-xs text-gray-500 mt-4">
+                        We reply within 24 hrs • No recruiters please
+                    </p>
+                </div>
+                <p class="text-center text-sm text-gray-600">
+                    More cloud & AI roles opening Q1 2026. Stay tuned!
+                </p>
+                <div class="flex justify-center space-x-4 mt-6">
                     <a href="mailto:resumes@intellirize.com" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition">Email Resume</a>
                     <a href="https://wa.me/14844849815" class="bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition" target="_blank">WhatsApp Us</a>
                 </div>
-                <p class="text-center flex items-center justify-center space-x-2"><span class="hi-phone w-5 h-5"></span><a href="tel:+14844849815" class="underline hover:text-indigo-700">484-484-9815</a></p>
+                <p class="text-center mt-4 flex items-center justify-center space-x-2">
+                    <span class="w-5 h-5"></span>
+                    <a href="tel:+14844849815" class="underline hover:text-indigo-700">484-484-9815</a>
+                </p>
             </div>
         </div>
     </section>
@@ -333,7 +396,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top">↑</button>
+    <button id="back-to-top" aria-label="Back to top">Up</button>
 
     <script>
         // Mobile Menu Toggle
@@ -345,7 +408,6 @@
             navMenu.setAttribute('aria-hidden', isExpanded);
             navMenu.classList.toggle('hidden');
         });
-
         // Smooth Scrolling and Active Nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -360,7 +422,6 @@
                 }
             });
         });
-
         // Back to Top Button
         window.addEventListener('scroll', () => {
             document.getElementById('back-to-top').style.display = (window.scrollY > 100) ? 'block' : 'none';
@@ -368,7 +429,6 @@
         document.getElementById('back-to-top').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
         // Active Nav on Load
         window.addEventListener('load', () => {
             const hash = window.location.hash;
