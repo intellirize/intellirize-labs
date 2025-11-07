@@ -198,39 +198,39 @@ function showToast(message) {
     }, 3000);
 }
 
-// FAQ Data - AI-Driven Recruitment Focus
+// FAQ Data - Generic IntelliRize Capabilities
 const faqs = [
     {
-        question: "How does IntelliRize Labs use AI-driven recruitment for this role?",
-        answer: "Our AI-powered matching system analyzes job requirements against candidate profiles, identifying the best matches based on technical skills, experience patterns, and cultural alignment. For the Solution Architect role, our AI evaluates AWS expertise, cloud migration experience, and architectural capabilities to ensure precise matching."
+        question: "How does IntelliRize Labs' AI-driven recruitment work?",
+        answer: "Our AI-powered matching system analyzes job requirements against candidate profiles, identifying the best matches based on technical skills, experience patterns, and cultural alignment. This proprietary technology ensures precise matching across all IT roles and specializations."
     },
     {
-        question: "What makes IntelliRize Labs' talent pool unique for Platform Engineering roles?",
-        answer: "We maintain a curated network of pre-vetted AWS and cloud migration specialists. Each candidate in our pool undergoes rigorous technical assessments, portfolio reviews, and architectural interviews. Our talent pool consists of professionals with proven enterprise-scale cloud experience and successful migration project backgrounds."
+        question: "What types of IT professionals can IntelliRize Labs provide?",
+        answer: "We provide a diverse range of IT talents including Software Engineers, Cloud Architects, DevOps Engineers, AI/ML Specialists, Data Scientists, Full Stack Developers, UI/UX Designers, QA Engineers, Cybersecurity Professionals, and Business Analysts. Our talent pool covers various experience levels and technology stacks."
     },
     {
-        question: "How does the AI talent matching process work specifically for Solution Architects?",
-        answer: "Our proprietary matching algorithm evaluates: 1) Core AWS expertise (VPC, IAM, Lambda, EKS), 2) Cloud migration experience (MGN, DMS, VMware-to-AWS), 3) Architecture design patterns, 4) Leadership and mentoring capability, 5) Project complexity alignment. Each candidate is scored across 50+ technical competencies to ensure optimal fit."
+        question: "What makes IntelliRize Labs' talent pool unique?",
+        answer: "We maintain a curated network of pre-vetted IT professionals who undergo rigorous technical assessments, portfolio reviews, and interviews. Each candidate in our pool has proven experience with enterprise-scale projects and industry best practices. Our talent spans multiple specializations and geographies."
     },
     {
-        question: "What is your recruitment timeline for this Solution Architect position?",
-        answer: "With our AI-driven process, we can identify and present qualified Solution Architects within 24-48 hours. Our pre-screening and matching system eliminates manual resume screening, allowing us to focus on in-depth technical evaluations and interviews."
+        question: "How fast can IntelliRize Labs find qualified candidates?",
+        answer: "With our AI-driven process, we can identify and present qualified candidates within 24-48 hours. Our pre-screening and matching system eliminates manual resume screening, allowing us to focus on in-depth technical evaluations and interviews."
     },
     {
-        question: "How do you ensure quality in your talent pool for Platform Engineering roles?",
-        answer: "We employ a multi-layered vetting approach: technical certification verification, hands-on architecture challenges, reference checks with past clients, and behavioral assessments. For cloud migration specialists, we validate experience through portfolio reviews of actual migration projects they've led."
+        question: "How do you ensure quality in your talent pool?",
+        answer: "We employ a multi-layered vetting approach: technical certification verification, hands-on technical challenges, reference checks with past clients, and behavioral assessments. Every candidate is verified for their claimed expertise and track record of success."
     },
     {
         question: "Does IntelliRize Labs match candidates to specific project needs?",
-        answer: "Yes. For this Solution Architect role, our AI analyzes your specific project requirements—migration scale, AWS services needed, timeline constraints—and matches candidates with directly relevant experience. We prioritize candidates who have handled similar enterprise-scale migrations and architectural decisions."
+        answer: "Yes. Our AI analyzes your specific project requirements—tech stack, timeline, team size, and skill levels—and matches candidates with directly relevant experience. We prioritize quality fit over speed, ensuring long-term success."
     },
     {
         question: "What's the difference between IntelliRize's AI matching and traditional recruitment?",
         answer: "Traditional recruiting relies on keyword matching and subjective evaluation. Our AI-driven approach analyzes behavioral patterns, skill depth, project complexity handled, and team dynamics. This results in faster identification of truly qualified candidates and significantly higher placement success rates."
     },
     {
-        question: "How many Solution Architects are in your current talent pool?",
-        answer: "We maintain a diverse pool of pre-vetted cloud architects and platform engineers. For remote Platform Engineering roles with AWS migration focus, we typically have qualified candidates available for immediate consideration. Our network spans North America and includes India-based professionals with proven track records."
+        question: "What engagement models does IntelliRize Labs offer?",
+        answer: "We offer flexible engagement models including full-time placements, contract-to-hire, short-term projects, and team augmentation. Our solutions scale from single specialists to entire teams, tailored to your specific business needs and timelines."
     }
 ];
 
@@ -253,11 +253,11 @@ faqs.forEach((faq, index) => {
 
 // Chatbot
 const chatbotResponses = {
-    greeting: "Hello! 👋 I'm IntelliRize AI Assistant. I can help you with information about our Solution Architect - Platform Engineering role and our AI-driven recruitment process.",
-    role: "Our Solution Architect - Platform Engineering role is a senior position (10+ years required) focused on AWS cloud migration and platform engineering for enterprise clients. It's fully remote.",
-    skills: "Must-have skills include AWS infrastructure expertise, cloud migration experience (especially VMware to AWS), scripting (Python/Bash), networking, and CI/CD knowledge. Check the job details for the complete list.",
-    timeline: "We typically respond to applications within 24-48 hours. The full hiring process usually takes 2-3 weeks.",
-    international: "Yes, we actively recruit internationally. We handle all compliance and legal requirements for global placements.",
+    greeting: "Hello! I'm IntelliRize AI Assistant. How can I help you today?",
+    services: "IntelliRize provides AI-driven IT staffing and resourcing solutions. We specialize in matching top-tier IT talent across multiple domains including Cloud, DevOps, AI/ML, Data, Software Engineering, and more.",
+    timeline: "We typically respond to inquiries within 24-48 hours. Our AI-driven matching process allows us to identify qualified candidates quickly, often completing placements in 2-3 weeks.",
+    capabilities: "Our talent pool includes experts in AWS, Azure, Kubernetes, Python, Java, React, Angular, Salesforce, Data Science, Machine Learning, and many other technologies. We handle everything from individual specialists to entire team augmentation.",
+    international: "Yes, we actively recruit internationally. We handle all compliance and legal requirements for global placements. Our network spans multiple continents.",
     contact: "You can reach us at: 📞 484-484-9815 | 📧 resumes@intellirize.com | 💬 WhatsApp: +1-484-484-9815"
 };
 
@@ -290,17 +290,17 @@ function sendMessage() {
         botMsg.className = 'chat-message bot-message';
         
         const lowerMessage = message.toLowerCase();
-        let response = "I'm here to help! You can ask about our Solution Architect role, hiring timeline, visa sponsorship, or how to apply.";
+        let response = "I'm here to help! You can ask about our services, capabilities, hiring timeline, international recruitment, or how to contact us.";
         
-        if (lowerMessage.includes('role') || lowerMessage.includes('position') || lowerMessage.includes('architect')) {
-            response = chatbotResponses.role;
-        } else if (lowerMessage.includes('skill') || lowerMessage.includes('requirement')) {
-            response = chatbotResponses.skills;
-        } else if (lowerMessage.includes('timeline') || lowerMessage.includes('how long') || lowerMessage.includes('process')) {
+        if (lowerMessage.includes('service') || lowerMessage.includes('what do') || lowerMessage.includes('provide')) {
+            response = chatbotResponses.services;
+        } else if (lowerMessage.includes('skill') || lowerMessage.includes('capabilit') || lowerMessage.includes('tech') || lowerMessage.includes('talent')) {
+            response = chatbotResponses.capabilities;
+        } else if (lowerMessage.includes('timeline') || lowerMessage.includes('how long') || lowerMessage.includes('process') || lowerMessage.includes('fast')) {
             response = chatbotResponses.timeline;
-        } else if (lowerMessage.includes('international') || lowerMessage.includes('visa') || lowerMessage.includes('sponsor')) {
+        } else if (lowerMessage.includes('international') || lowerMessage.includes('visa') || lowerMessage.includes('sponsor') || lowerMessage.includes('global')) {
             response = chatbotResponses.international;
-        } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('phone')) {
+        } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
             response = chatbotResponses.contact;
         } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
             response = chatbotResponses.greeting;
