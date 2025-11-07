@@ -198,31 +198,39 @@ function showToast(message) {
     }, 3000);
 }
 
-// FAQ Data
+// FAQ Data - AI-Driven Recruitment Focus
 const faqs = [
     {
-        question: "What is the primary focus of the Solution Architect role?",
-        answer: "This role focuses on leading cloud migration projects from on-premise datacenters to AWS, architecting scalable platform engineering solutions, and delivering advanced applications in AI/ML, data engineering, and analytics."
+        question: "How does IntelliRize Labs use AI-driven recruitment for this role?",
+        answer: "Our AI-powered matching system analyzes job requirements against candidate profiles, identifying the best matches based on technical skills, experience patterns, and cultural alignment. For the Solution Architect role, our AI evaluates AWS expertise, cloud migration experience, and architectural capabilities to ensure precise matching."
     },
     {
-        question: "Is this position fully remote?",
-        answer: "Yes, this is a 100% remote position. You can work from anywhere with a reliable internet connection."
+        question: "What makes IntelliRize Labs' talent pool unique for Platform Engineering roles?",
+        answer: "We maintain a curated network of pre-vetted AWS and cloud migration specialists. Each candidate in our pool undergoes rigorous technical assessments, portfolio reviews, and architectural interviews. Our talent pool consists of professionals with proven enterprise-scale cloud experience and successful migration project backgrounds."
     },
     {
-        question: "What experience level is required?",
-        answer: "This is a senior-level position requiring 10+ years of IT experience, with strong AWS and cloud migration expertise."
+        question: "How does the AI talent matching process work specifically for Solution Architects?",
+        answer: "Our proprietary matching algorithm evaluates: 1) Core AWS expertise (VPC, IAM, Lambda, EKS), 2) Cloud migration experience (MGN, DMS, VMware-to-AWS), 3) Architecture design patterns, 4) Leadership and mentoring capability, 5) Project complexity alignment. Each candidate is scored across 50+ technical competencies to ensure optimal fit."
     },
     {
-        question: "Do you accept international candidates?",
-        answer: "Yes, we work with global talent and handle all compliance requirements. Many placements are from India-based professionals."
+        question: "What is your recruitment timeline for this Solution Architect position?",
+        answer: "With our AI-driven process, we can identify and present qualified Solution Architects within 24-48 hours. Our pre-screening and matching system eliminates manual resume screening, allowing us to focus on in-depth technical evaluations and interviews."
     },
     {
-        question: "What happens after I apply?",
-        answer: "Our team reviews applications within 24-48 hours. If you're a good fit, we'll contact you to discuss next steps in detail."
+        question: "How do you ensure quality in your talent pool for Platform Engineering roles?",
+        answer: "We employ a multi-layered vetting approach: technical certification verification, hands-on architecture challenges, reference checks with past clients, and behavioral assessments. For cloud migration specialists, we validate experience through portfolio reviews of actual migration projects they've led."
     },
-{
-        question: "How can I learn more about the role?",
-        answer: "Click on the skill categories in the job posting to expand and view full details, or contact us at 484-484-9815 or contact@intellirize.com"
+    {
+        question: "Does IntelliRize Labs match candidates to specific project needs?",
+        answer: "Yes. For this Solution Architect role, our AI analyzes your specific project requirements—migration scale, AWS services needed, timeline constraints—and matches candidates with directly relevant experience. We prioritize candidates who have handled similar enterprise-scale migrations and architectural decisions."
+    },
+    {
+        question: "What's the difference between IntelliRize's AI matching and traditional recruitment?",
+        answer: "Traditional recruiting relies on keyword matching and subjective evaluation. Our AI-driven approach analyzes behavioral patterns, skill depth, project complexity handled, and team dynamics. This results in faster identification of truly qualified candidates and significantly higher placement success rates."
+    },
+    {
+        question: "How many Solution Architects are in your current talent pool?",
+        answer: "We maintain a diverse pool of pre-vetted cloud architects and platform engineers. For remote Platform Engineering roles with AWS migration focus, we typically have qualified candidates available for immediate consideration. Our network spans North America and includes India-based professionals with proven track records."
     }
 ];
 
@@ -250,7 +258,7 @@ const chatbotResponses = {
     skills: "Must-have skills include AWS infrastructure expertise, cloud migration experience (especially VMware to AWS), scripting (Python/Bash), networking, and CI/CD knowledge. Check the job details for the complete list.",
     timeline: "We typically respond to applications within 24-48 hours. The full hiring process usually takes 2-3 weeks.",
     international: "Yes, we actively recruit internationally. We handle all compliance and legal requirements for global placements.",
-    contact: "You can reach us at: 📞 484-484-9815 | 📧 contact@intellirize.com | 💬 WhatsApp: +1-484-484-9815"
+    contact: "You can reach us at: 📞 484-484-9815 | 📧 resumes@intellirize.com | 💬 WhatsApp: +1-484-484-9815"
 };
 
 document.getElementById('chatbotToggle').addEventListener('click', toggleChat);
