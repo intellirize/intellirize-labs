@@ -3,441 +3,1347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IntelliRize Labs offers leading IT staffing and resourcing solutions, connecting top talent with US projects. Explore careers and services.">
-    <meta name="keywords" content="IT staffing, resourcing, business development, remote jobs, US IT market">
-    <meta property="og:title" content="IntelliRize Labs - Resourcing & Staffing Solutions">
-    <meta property="og:description" content="Empower your team with expert IT staffing from IntelliRize Labs.">
-    <meta property="og:image" content="assets/intellirize-labs-logo.png">
-    <title>IntelliRize Labs - Resourcing & Staffing Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.0.18/24/outline/index.min.css" rel="stylesheet">
+    <title>IntelliRize Labs - AI-Driven IT Staffing Solutions</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-cyan: #06b6d4;
+            --primary-blue: #3b82f6;
+            --primary-purple: #a855f7;
+            --dark-navy: #0f172a;
+            --darker-navy: #1e293b;
+            --light-text: #f1f5f9;
+            --muted-text: #94a3b8;
+            --accent-glow: #00d9ff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background: linear-gradient(135deg, #F5F5F4 0%, #D4D4D8 100%);
-            color: #1E293B;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--darker-navy) 100%);
+            color: var(--light-text);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
-        .hero-bg {
-            background-image: linear-gradient(135deg, rgba(245, 245, 244, 0.7), rgba(212, 212, 216, 0.7)), url('https://images.unsplash.com/photo-1516321310764-4d2c3e13f425?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #1E293B;
+        
+        /* Particle Background */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
         }
-        .logo-container {
+        
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 20px 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
-        .logo-container img {
-            height: 40px;
-            width: auto;
-            transition: transform 0.3s ease-in-out;
-        }
-        .logo-container img:hover {
-            transform: scale(1.05);
-        }
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
+        
+        .logo {
+            font-size: 24px;
             font-weight: 700;
-            font-size: 1.5rem;
-            background: linear-gradient(90deg, #14B8A6, #A855F7);
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
-            margin-left: 0.5rem;
         }
-        .logo-text .sub {
-            font-style: italic;
-            font-size: 1.2rem;
+        
+        .nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
         }
-        @media (min-width: 768px) {
-            .logo-container img {
-                height: 50px;
-            }
-            .logo-text {
-                font-size: 2rem;
-            }
-            .logo-text .sub {
-                font-size: 1.5rem;
-            }
-        }
-        section {
-            padding: 2rem 1rem;
-        }
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #1E40AF;
-            text-shadow: 0 0 10px rgba(30, 64, 175, 0.3);
-        }
-        h1 { font-size: 2rem; }
-        h2 { font-size: 1.75rem; }
-        h3 { font-size: 1.25rem; }
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #1E293B;
-        }
-        .bg-section {
-            background: rgba(245, 245, 244, 0.8);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        .bg-section:hover {
-            transform: translateY(-2px);
-        }
-        .job-card {
-            border: 2px solid #A855F7;
-            position: relative;
-            overflow: hidden;
-        }
-        .job-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #FF3B30;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transform: rotate(15deg);
-            box-shadow: 0 2px 8px rgba(255,59,48,0.4);
-        }
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background-color: #A855F7;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        #back-to-top:hover {
-            opacity: 0.8;
-            transform: scale(1.1);
-        }
-        a {
-            color: #1E40AF;
+        
+        .nav a {
+            color: var(--light-text);
             text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #A855F7;
-        }
-        .nav-item {
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
         }
-        .nav-item::after {
+        
+        .nav a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: #1E40AF;
-            transition: width 0.3s;
+            background: var(--primary-cyan);
+            transition: width 0.3s ease;
         }
-        .nav-item:hover::after, .nav-item.active::after {
+        
+        .nav a:hover {
+            color: var(--primary-cyan);
+        }
+        
+        .nav a:hover::after {
             width: 100%;
         }
-        @media (max-width: 640px) {
-            button, a {
-                min-height: 44px;
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--light-text);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+        }
+        
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .typing-text {
+            color: var(--primary-cyan);
+            border-right: 3px solid var(--primary-cyan);
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: var(--primary-cyan); }
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--muted-text);
+            margin-bottom: 20px;
+            font-weight: 300;
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: var(--muted-text);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.8s ease;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            color: white;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(6, 182, 212, 0.6);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(6, 182, 212, 0.6); }
+        }
+        
+        .btn-secondary {
+            background: rgba(6, 182, 212, 0.1);
+            border: 2px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--light-text), var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--muted-text);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(168, 85, 247, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--light-text);
+        }
+        
+        .service-card p {
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+        
+        /* Featured Job Section */
+        .featured-job {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+        
+        .job-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            border-radius: 20px;
+            padding: 48px;
+            margin-top: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        
+        .job-card:hover::before {
+            opacity: 0.2;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .job-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--light-text);
+        }
+        
+        .job-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .icon-btn {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid var(--primary-cyan);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-btn:hover {
+            background: rgba(6, 182, 212, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .job-meta span {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--primary-cyan);
+        }
+        
+        .job-description {
+            color: var(--muted-text);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .skills-section {
+            margin: 32px 0;
+        }
+        
+        .skills-section h4 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--primary-cyan);
+        }
+        
+        .skill-category {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            border-color: var(--primary-cyan);
+        }
+        
+        .skill-category-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--light-text);
+        }
+        
+        .skill-items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .skill-category.active .skill-items {
+            max-height: 1000px;
+        }
+        
+        .skill-category.active .skill-category-title::after {
+            transform: rotate(180deg);
+        }
+        
+        .skill-category-title::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-items ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 16px;
+        }
+        
+        .skill-items li {
+            padding: 8px 0;
+            color: var(--muted-text);
+            font-size: 14px;
+        }
+        
+        .skill-items li::before {
+            content: '✓ ';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .good-to-have {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .good-to-have li {
+            background: rgba(168, 85, 247, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--muted-text);
+        }
+        
+        .good-to-have li::before {
+            content: '⭐ ';
+            margin-right: 8px;
+        }
+        
+        .job-footer {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 24px;
+            color: var(--muted-text);
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .testimonial-role {
+            color: var(--muted-text);
+            font-size: 14px;
+        }
+        
+        .testimonial-rating {
+            margin-top: 16px;
+            color: #fbbf24;
+            font-size: 20px;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-cyan);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 24px;
+            color: var(--muted-text);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 24px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-color: var(--primary-cyan);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+        }
+        
+        .contact-item a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--light-text);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 16px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 8px;
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+        }
+        
+        /* Chatbot */
+        .chatbot {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+        
+        .chatbot-toggle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 16px;
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .chatbot-window.active {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chatbot-header {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .chat-message {
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 80%;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .bot-message {
+            background: rgba(6, 182, 212, 0.1);
+            align-self: flex-start;
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            align-self: flex-end;
+        }
+        
+        .chatbot-input {
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 8px;
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .chatbot-input button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            color: var(--muted-text);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--dark-navy);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(6, 182, 212, 0.1);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-logo {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chatbot-window {
+                width: calc(100vw - 48px);
             }
         }
     </style>
 </head>
-<body class="bg-gray-200 text-gray-700">
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+    
     <!-- Header -->
-    <header class="bg-gray-100 shadow sticky top-0 z-10">
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center" role="navigation" aria-label="Main navigation">
-            <div class="logo-container">
-                <img src="assets/intellirize-labs-logo.png" alt="IntelliRize Labs Logo - Futuristic IT Staffing Company" class="h-10 md:h-12" loading="lazy">
-                <div class="logo-text">
-                    <span class="main">IntelliRize</span><span class="sub">Labs</span>
-                </div>
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="logo">IntelliRize Labs</div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#job">Featured Job</a>
+
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="md:flex space-x-6 hidden md:block">
-                <a href="#home" class="text-gray-700 hover:text-indigo-700 nav-item" aria-current="page">Home</a>
-                <a href="#staffing" class="text-gray-700 hover:text-indigo-700 nav-item">Staffing</a>
-                <a href="#resourcing" class="text-gray-700 hover:text-indigo-700 nav-item">Resourcing</a>
-                <a href="#expertise" class="text-gray-700 hover:text-indigo-700 nav-item">Our Expertise</a>
-                <a href="#careers" class="text-gray-700 hover:text-indigo-700 nav-item">Careers</a>
-                <a href="#contact-us" class="text-gray-700 hover:text-indigo-700 nav-item">Contact Us</a>
-            </div>
-            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-            <div id="nav-menu" class="md:hidden hidden absolute top-12 right-4 bg-gray-100 shadow-lg rounded-lg p-3 space-y-2" aria-hidden="true">
-                <a href="#home" class="block text-gray-700 hover:text-indigo-700 nav-item">Home</a>
-                <a href="#staffing" class="block text-gray-700 hover:text-indigo-700 nav-item">Staffing</a>
-                <a href="#resourcing" class="block text-gray-700 hover:text-indigo-700 nav-item">Resourcing</a>
-                <a href="#expertise" class="block text-gray-700 hover:text-indigo-700 nav-item">Our Expertise</a>
-                <a href="#careers" class="block text-gray-700 hover:text-indigo-700 nav-item">Careers</a>
-                <a href="#contact-us" class="block text-gray-700 hover:text-indigo-700 nav-item">Contact Us</a>
-            </div>
-        </nav>
+        </div>
     </header>
-
+    
     <!-- Hero Section -->
-    <section id="home" class="hero-bg py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-2xl md:text-4xl font-bold mb-3">Leading Resourcing & Staffing Solutions</h1>
-            <p class="text-base md:text-lg mb-4">IntelliRize Labs provides expert staffing and resourcing to empower your team with top-tier talent for US-based IT projects. Our solutions ensure seamless integration and scalable growth.</p>
-            <a href="#contact-us" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition">Get Started</a>
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-logo">IntelliRize Labs</div>
+            <h1 class="hero-title">
+                <span id="typingText" class="typing-text"></span>
+            </h1>
+            <p class="hero-subtitle">Resourcing &amp; Staffing Solutions</p>
+            <p class="hero-description">
+                We connect top-tier IT professionals with US-based projects through AI-driven matching.
+                Our streamlined approach ensures seamless talent integration and scalable growth.
+            </p>
+            <div class="hero-cta">
+                <a href="#job" class="btn btn-primary">View Opportunities</a>
+                <a href="#services" class="btn btn-secondary">Learn More</a>
+            </div>
         </div>
     </section>
-
-    <!-- Staffing Section -->
-    <section id="staffing" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Tailored Staffing Solutions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Flexible IT Staffing</h3>
-                    <p>Access a curated pool of developers, UI/UX designers, and project managers who integrate seamlessly into your team with minimal onboarding. We specialize in matching skills to your specific project requirements for optimal performance, including expertise in AWS, AI/ML, and a diverse tech stack.</p>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">
+                Expert IT staffing and resourcing solutions tailored to your business needs
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">👥</span>
+                    <h3>Curated Talent Pool</h3>
+                    <p>Access a curated pool of developers, UI/UX designers, and project managers who integrate seamlessly into your team with minimal onboarding.</p>
                 </div>
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Rapid Deployment</h3>
-                    <p>Our streamlined process delivers skilled professionals quickly, ideal for short-term needs or emergency replacements. With a focus on quality vetting, we ensure your projects stay on track without delays.</p>
+                <div class="service-card">
+                    <span class="service-icon">⚡</span>
+                    <h3>Fast Resourcing</h3>
+                    <p>Our streamlined process delivers skilled professionals quickly, ideal for short-term needs or emergency replacements.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📈</span>
+                    <h3>Scalable Growth</h3>
+                    <p>From small projects to large-scale expansions, we provide cost-efficient resourcing models tailored to your growth.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🤝</span>
+                    <h3>Culture Fit</h3>
+                    <p>We match talent with your company culture, ensuring long-term success and team harmony.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎯</span>
+                    <h3>Expert Sourcing</h3>
+                    <p>Our proven methods identify and onboard the best IT professionals for your needs.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💼</span>
+                    <h3>Business Development</h3>
+                    <p>We streamline resourcing to maximize efficiency and support your business goals.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Resourcing Section -->
-    <section id="resourcing" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Strategic Resourcing Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Scalable Talent Pools</h3>
-                    <p>From small projects to large-scale expansions, we provide cost-efficient resourcing models tailored to your growth. Our flexible engagements adapt to your needs, ensuring you have the right talent at the right time.</p>
-                </div>
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Cultural Alignment</h3>
-                    <p>We match talent with your company culture, ensuring long-term success and team harmony. Our behavioral assessments and interviews guarantee professionals who not only have the skills but also fit your organizational values.</p>
-                </div>
+    
+    <!-- Featured Job Section -->
+    <section class="featured-job" id="job">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="featured-badge">⭐ FEATURED OPPORTUNITY</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Our Expertise</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Talent Acquisition</h3>
-                    <p>Our proven methods identify and onboard the best IT professionals for your needs. With a vast network of vetted candidates, we ensure high-quality hires that drive your projects forward efficiently.</p>
+            <h2 class="section-title">Solution Architect - Platform Engineering</h2>
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">Solution Architect - Platform Engineering</h3>
+                    </div>
+                    <div class="job-actions">
+                        <button class="icon-btn" id="saveJob" title="Save job">🤍</button>
+                        <button class="icon-btn" id="shareJob" title="Share job">🔗</button>
+                    </div>
                 </div>
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Resource Optimization</h3>
-                    <p>We streamline resourcing to maximize efficiency and support your business goals. By analyzing your requirements, we create customized strategies that reduce costs and improve productivity.</p>
+                <div class="job-meta">
+                    <span>📍 Remote</span>
+                    <span>💼 Full Time</span>
+                    <span>☁️ AWS Cloud Migration</span>
+                    <span>⭐ Senior Level (10+ years)</span>
                 </div>
-                <div class="bg-section">
-                    <h3 class="text-lg font-semibold mb-2">Future Innovations</h3>
-                    <p>Stay ahead with our upcoming software services and innovative products, coming soon. We're expanding into custom software development to complement our staffing solutions for end-to-end IT support.</p>
+                <div class="job-description">
+                    <p>As a Solution Architect - Platform Engineering, you will be instrumental in our Platform Engineering team, leading the delivery of advanced solutions in Application Development, Platform Engineering, Data Engineering, Analytics, and Machine Learning for our clients. This role requires experience in workload migration from on-premise datacenter environments to AWS, enabling clients to leverage the full potential of cloud capabilities.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Careers Section – YOUR UPDATED VERSION -->
-    <!-- Careers Section – TECH-FOCUSED UPDATE -->
-    <section id="careers" class="py-8 bg-gradient-to-b from-purple-50 to-teal-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Join Our Team</h2>
-            <div class="bg-section max-w-4xl mx-auto">
-                <p class="mb-6 text-center">
-                    We’re hiring a Senior Solution Architect to design next-gen cloud platforms for Fortune-500 clients.
-                </p>
-                <!-- SENIOR SOLUTION ARCHITECT – TECH ONLY -->
-                <div class="job-card bg-white p-6 rounded-xl shadow-lg mb-6 relative overflow-hidden">
-                    <div class="job-badge">NOW HIRING</div>
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">
-                        Senior Solution Architect
-                    </h3>
-                    <p class="text-gray-600 mb-5">
-                        <strong>Location:</strong> North America (100% Remote)
-                    </p>
-                    <div class="space-y-5 text-sm">
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">Must-Have Technical Skills</h4>
-                            <ul class="space-y-2">
-                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> 10+ years building cloud-native architectures (AWS, Azure, GCP)</li>
-                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Hands-on with microservices, Kubernetes, Terraform, CI/CD</li>
-                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Designed 3+ enterprise migrations (>500 workloads)</li>
-                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Deep expertise in cost optimization & security hardening</li>
-                                <li class="flex items-start"><span class="text-green-600 mr-2">Checkmark</span> Pre-sales white-boarding & RFP response leadership</li>
+                <div class="skills-section">
+                    <h4>Must-Have Skills (Click to expand)</h4>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            AWS Cloud Infrastructure &amp; Services
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>Proficiency in Architecting, deploying and maintaining AWS Cloud based infrastructure services</li>
+                                <li>VPC, IAM, S3, Lambda, EC2, SQS, SSM, ASG, Cloudwatch, Cloudtrail</li>
+                                <li>Boto3, Python, EKS, Shell Scripting, Automation, SNS, SQS, KMS, ECR, RDS</li>
+                                <li>Good Understanding of medium to large Enterprise architectures</li>
+                                <li>Multi-Account AWS setup experience</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
-                        <a href="mailto:resumes@intellirize.com?subject=Senior%20Solution%20Architect%20Application&body=Hi%20Team%2C%0A%0AI’m%20applying%20for%20the%20Senior%20Solution%20Architect%20role.%20Resume%20attached.%0A%0AThanks!"
-                           class="bg-indigo-600 text-white px-6 py-3 rounded-full font-bold hover:bg-indigo-700 transition text-center">
-                           Apply via Email
-                        </a>
-                        <a href="https://wa.me/14844849815?text=Hi!%20I’m%20a%20Senior%20Solution%20Architect%20ready%20to%20design%20your%20next%20cloud%20platform.%20Let’s%20talk!"
-                           target="_blank"
-                           class="bg-green-600 text-white px-6 py-3 rounded-full font-bold hover:bg-green-700 transition text-center flex items-center justify-center">
-                           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.446.099-.148.05-.272-.025-.372-.074-.099-.67-1.613-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.265c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-                           WhatsApp Me
-                        </a>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            Cloud Migration Expertise
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>Understanding of different Migration approaches (6Rs) with recent experience</li>
+                                <li>VMware/other platform based Virtual Machine Lift and Shift (REHOST) migration to AWS EC2</li>
+                                <li>Experience with Cloud Endure, Double-Take, AWS Migration Hub, AWS Application Migration Service (MGN)</li>
+                                <li>AWS Server Migration Service (SMS), AWS Database Migration Service (DMS)</li>
+                                <li>AWS services: EC2, S3, auto-scaling, Landing Zone, Control Tower</li>
+                                <li>AWS Migration Evaluator and Portfolio Assessment tools</li>
+                                <li>Service-oriented architecture and cloud-based web services</li>
+                                <li>Linux/Windows OS troubleshooting during migration</li>
+                                <li>Database server migration experience</li>
+                            </ul>
+                        </div>
                     </div>
-                    <p class="text-center text-xs text-gray-500 mt-4">
-                        We reply within 24 hrs • No recruiters please
-                    </p>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            Networking Skills
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>Setting up and managing hybrid cloud networks</li>
+                                <li>VPN and AWS Direct Connect experience</li>
+                                <li>Application Load Balancers (ALB) for traffic management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            Automation &amp; Deployment
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>Python and Bash scripting for automation</li>
+                                <li>Infrastructure as Code (IaC): Terraform, CDK, CloudFormation</li>
+                                <li>CI/CD pipelines: Git, Jenkins, SonarQube, Artifactory, Docker</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            Security &amp; Compliance
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>AWS security best practices and IAM management</li>
+                                <li>Compliance requirements for data handling and migration processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skill-category" onclick="toggleSkillCategory(this)">
+                        <div class="skill-category-title">
+                            Configuration Management &amp; Scripting
+                        </div>
+                        <div class="skill-items">
+                            <ul>
+                                <li>Bash, Python, Core Java, Scala</li>
+                                <li>Configuration tools: Ansible, Chef, Puppet, AWS SSM</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-center text-sm text-gray-600">
-                    More cloud & AI roles opening Q1 2026. Stay tuned!
-                </p>
-                <div class="flex justify-center space-x-4 mt-6">
-                    <a href="mailto:resumes@intellirize.com" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition">Email Resume</a>
-                    <a href="https://wa.me/14844849815" class="bg-green-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-700 transition" target="_blank">WhatsApp Us</a>
+                <div class="skills-section">
+                    <h4>Good-to-Have Skills</h4>
+                    <ul class="good-to-have">
+                        <li>VMware ecosystem knowledge (vSphere, vCenter, ESX, NSX)</li>
+                        <li>vMotion and VM Export/Import to AWS integration</li>
+                        <li>Amazon CloudWatch infrastructure monitoring</li>
+                        <li>Database query optimization and performance tuning</li>
+                        <li>AWS Certifications (Solutions Architect, DevOps Engineer)</li>
+                        <li>SQL, NoSQL databases (PostgreSQL, MongoDB, Redis)</li>
+                        <li>Docker, Kubernetes, AWS EKS expertise</li>
+                        <li>Ansible, Chef, Puppet systems management</li>
+                        <li>Agile and DevOps environment experience</li>
+                    </ul>
                 </div>
-                <p class="text-center mt-4 flex items-center justify-center space-x-2">
-                    <span class="w-5 h-5"></span>
-                    <a href="tel:+14844849815" class="underline hover:text-indigo-700">484-484-9815</a>
-                </p>
+                <div class="job-footer">
+                    <button class="btn btn-primary" onclick="openApplyModal()">Apply Now</button>
+                    <button class="btn btn-secondary" onclick="scrollToContact()">Contact Us</button>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <!-- FAQ Section -->
-    <section id="faq" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
-            <div class="bg-section">
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">What services do you offer?</h3>
-                    <p>We specialize in IT staffing and resourcing for US projects, with flexible models for talent acquisition and deployment.</p>
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div id="faqContainer"></div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <a href="tel:484-484-9815">484-484-9815</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <a href="mailto:contact@intellirize.com">contact@intellirize.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <a href="https://wa.me/14844849815" target="_blank">WhatsApp: +1-484-484-9815</a>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">How do you ensure talent quality?</h3>
-                    <p>Our rigorous screening process includes technical assessments, interviews, and cultural fit evaluations to deliver top performers.</p>
-                </div>
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Are your services remote-friendly?</h3>
-                    <p>Yes, we support remote staffing solutions tailored for global teams, focusing on US-based opportunities.</p>
-                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact-us" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Contact Us</h2>
-            <div class="bg-section max-w-2xl mx-auto">
-                <p class="mb-4">IntelliRize Labs is dedicated to providing exceptional IT staffing and resourcing solutions. Our team is available to assist you with inquiries, consultations, or partnership opportunities. Please reach out to us through the following channels:</p>
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Contact Information</h3>
-                    <p class="flex items-center space-x-2"><span class="hi-phone w-5 h-5"></span><a href="tel:+14844849815" class="underline hover:text-indigo-700">484-484-9815</a> (Available Monday-Friday, 9:00 AM - 6:00 PM EDT)</p>
-                    <p><strong>Email:</strong> <a href="mailto:contact@intellirize.com" class="underline hover:text-indigo-700">contact@intellirize.com</a></p>
-                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/14844849815" class="underline hover:text-green-700" target="_blank">+1-484-484-9815</a></p>
-                </div>
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Contact Form</h3>
-                    <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
-                        <div>
-                            <input type="text" name="name" placeholder="Your Full Name" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" aria-label="Full Name">
-                        </div>
-                        <div>
-                            <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" aria-label="Email">
-                        </div>
-                        <div>
-                            <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" aria-label="Message"></textarea>
-                        </div>
-                        <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-indigo-700 transition w-full">Submit Inquiry</button>
-                    </form>
-                    <p class="mt-2 text-sm text-gray-500">* Responses are typically provided within 24-48 business hours.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Privacy Policy Section -->
-    <section id="privacy-policy" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Privacy Policy</h2>
-            <div class="bg-section">
-                <p class="mb-4">At IntelliRize Labs, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you visit our website or use our services.</p>
-                <h3 class="text-lg font-semibold mb-2">Information We Collect</h3>
-                <p class="mb-4">We may collect personal information such as your name, email address, and other details you provide when contacting us or applying for a position. We also collect non-personal data like website usage statistics to improve our services.</p>
-                <h3 class="text-lg font-semibold mb-2">How We Use Your Information</h3>
-                <p class="mb-4">Your information is used to respond to inquiries, process job applications, and enhance our website experience. We do not share your personal data with third parties except as required by law or with your consent.</p>
-                <h3 class="text-lg font-semibold mb-2">Data Security</h3>
-                <p class="mb-4">We implement industry-standard security measures to protect your information. However, no method of transmission over the internet is 100% secure, and we encourage you to take precautions when sharing sensitive data.</p>
-                <p>For more details, please contact us at <a href="mailto:privacy@intellirize.com" class="underline hover:text-indigo-700">privacy@intellirize.com</a>.</p>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
-    <footer class="bg-gray-100 py-4">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-2">© 2025 IntelliRize Labs. All rights reserved.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/company/intellirize" class="text-gray-700 hover:text-indigo-700" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#privacy-policy" class="text-gray-700 hover:text-indigo-700">Privacy Policy</a>
-                <a href="#careers" class="text-gray-700 hover:text-indigo-700">Careers</a>
+    <footer class="footer">
+        <p>&copy; 2025 IntelliRize Labs. All rights reserved.</p>
+    </footer>
+    
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>IntelliRize Assistant</h3>
+                <button class="chatbot-close" onclick="toggleChat()">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="chat-message bot-message">
+                    Hello! 👋 I'm IntelliRize AI Assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
             </div>
         </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top">Up</button>
-
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            navMenu.setAttribute('aria-hidden', isExpanded);
-            navMenu.classList.toggle('hidden');
-        });
-        // Smooth Scrolling and Active Nav
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-                document.querySelectorAll('.nav-item').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-                if (window.innerWidth < 768) {
-                    navMenu.classList.add('hidden');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    navMenu.setAttribute('aria-hidden', 'true');
-                }
-            });
-        });
-        // Back to Top Button
-        window.addEventListener('scroll', () => {
-            document.getElementById('back-to-top').style.display = (window.scrollY > 100) ? 'block' : 'none';
-        });
-        document.getElementById('back-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        // Active Nav on Load
-        window.addEventListener('load', () => {
-            const hash = window.location.hash;
-            if (hash) {
-                document.querySelectorAll('.nav-item').forEach(a => {
-                    if (a.getAttribute('href') === hash) a.classList.add('active');
-                });
-            }
-        });
-    </script>
+    </div>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+    
+    <!-- Apply Modal -->
+    <div class="modal" id="applyModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeApplyModal()">×</button>
+            <h2>Apply for Solution Architect - Platform Engineering</h2>
+            <form class="contact-form" id="applyForm" style="margin-top: 24px;">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Resume/LinkedIn URL *</label>
+                    <input type="url" required>
+                </div>
+                <div class="form-group">
+                    <label>Cover Letter</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
 </body>
 </html>
